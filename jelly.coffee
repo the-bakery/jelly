@@ -79,10 +79,10 @@ levels = [
     [
       { x:2, y:7, dir:'down' },
       { x:5, y:7, dir:'down' },
-    ]                    
+    ]
   ],
 
-  [ [ "xxxxxxxxxxxxxx", 
+  [ [ "xxxxxxxxxxxxxx",
       "xxxx x  x xxxx",
       "xxx  g  b  xxx",
       "xx   x  x   xx",
@@ -343,7 +343,7 @@ class Stage
           jelly = new Jelly(this, cell, x, y)
           @dom.appendChild(jelly.dom)
           @jellies.push jelly
-          @num_monochromatic_blocks += 1;
+          @num_monochromatic_blocks += 1
           @num_colors +=1 unless color of colors
           colors[color] = 1
         cell
@@ -523,7 +523,7 @@ class JellyCell
       for cell in other_master.color_mates
         cell.color_master = @color_master
       @color_master.color_mates =
-        @color_master.color_mates.concat(other_master.color_mates)  
+        @color_master.color_mates.concat(other_master.color_mates)
     if other instanceof JellyCell and @jelly != other.jelly
       @jelly.merge(other.jelly)
 
@@ -583,7 +583,7 @@ levelPicker = document.getElementById('level')
 for i in [1..levels.length]
   option = document.createElement('option')
   option.value = i
-  option.appendChild(document.createTextNode("Level #{i}"));
+  option.appendChild(document.createTextNode("Level #{i}"))
   levelPicker.appendChild(option)
 levelPicker.value = level
 levelPicker.addEventListener 'change', () ->
